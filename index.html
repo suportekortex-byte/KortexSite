@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kortex Company | Automação e Marketing</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -45,7 +42,6 @@
         }
     </script>
 
-    <!-- Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
@@ -190,26 +186,22 @@
 
 <body class="antialiased selection:bg-kortex-primary selection:text-white bg-grid">
 
-    <!-- Navbar -->
     <header
         class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-kortex-bg/70 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-2 group">
-                <img src="assets/logo.png" alt="Kortex Logo"
+                <img src="logo.png" alt="Kortex Logo"
                     class="h-10 w-auto object-contain drop-shadow-neon-sm hover:drop-shadow-neon transition-all duration-300">
                 <span class="text-xl font-bold tracking-tight relative z-10">Kortex<span
                         class="text-kortex-primary">.</span></span>
             </a>
 
-            <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-8">
                 <a href="#about" class="text-sm text-kortex-muted hover:text-white transition-colors">Sobre</a>
                 <a href="#services" class="text-sm text-kortex-muted hover:text-white transition-colors">Serviços</a>
                 <a href="#problems" class="text-sm text-kortex-muted hover:text-white transition-colors">Problemas</a>
             </nav>
 
-            <!-- CTA Desktop (Small Version) -->
             <div class="hidden md:block">
                 <button
                     class="px-6 py-2 rounded-full border border-white/10 hover:border-kortex-primary/50 hover:bg-kortex-primary/10 text-xs font-semibold tracking-wider transition-all">
@@ -217,21 +209,17 @@
                 </button>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button class="md:hidden text-white" aria-label="Menu">
                 <i class="ph ph-list text-2xl"></i>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-12 relative overflow-hidden">
-        <!-- Glow Effect Background -->
         <div
             class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-kortex-primary/20 rounded-full blur-[100px] pointer-events-none">
         </div>
 
-        <!-- Particles Background -->
         <div id="particles-js" class="absolute inset-0 z-0 pointer-events-none opacity-60"></div>
 
         <div class="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center gap-6">
@@ -261,20 +249,17 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
             <i class="ph ph-arrow-down text-xl"></i>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 px-6 relative">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1 relative">
                 <div class="absolute inset-0 bg-kortex-primary/10 blur-[60px] rounded-full"></div>
                 <div class="glass-card p-1 rounded-2xl relative overflow-hidden z-10 rotate-[-2deg] hover:rotate-0 transition-all duration-500 border-glow"
                     data-aos="fade-right">
-                    <!-- Abstract Placeholder Image using CSS Gradient -->
                     <div
                         class="bg-gradient-to-br from-gray-900 to-black w-full aspect-[4/3] rounded-xl flex items-center justify-center border border-white/5">
                         <i class="ph ph-cpu text-6xl text-white/20"></i>
@@ -294,7 +279,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-20 px-6 bg-white/[0.02]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -303,7 +287,6 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Service 1 -->
                 <div class="glass-card p-8 rounded-2xl group transition-all duration-300 border-glow" data-aos="fade-up"
                     data-aos-delay="100">
                     <div
@@ -317,7 +300,6 @@
                     </p>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="glass-card p-8 rounded-2xl group transition-all duration-300 border-glow" data-aos="fade-up"
                     data-aos-delay="200">
                     <div
@@ -331,7 +313,6 @@
                     </p>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="glass-card p-8 rounded-2xl group transition-all duration-300 border-glow" data-aos="fade-up"
                     data-aos-delay="300">
                     <div
@@ -348,7 +329,6 @@
         </div>
     </section>
 
-    <!-- Problems Section -->
     <section id="problems" class="py-20 px-6">
         <div class="max-w-4xl mx-auto">
             <div class="glass-card rounded-3xl p-8 md:p-12 border-l-4 border-l-kortex-primary border-glow"
@@ -400,12 +380,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="border-t border-white/10 bg-black py-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
                 <a href="#" class="flex items-center gap-2 group">
-                    <img src="assets/logo.png" alt="Kortex Logo"
+                    <img src="logo.png" alt="Kortex Logo"
                         class="h-8 w-auto opacity-80 group-hover:opacity-100 transition-opacity">
                     <span class="text-2xl font-bold">Kortex<span class="text-kortex-primary">.</span></span>
                 </a>
@@ -432,7 +411,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
