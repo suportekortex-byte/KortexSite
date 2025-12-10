@@ -242,6 +242,118 @@
         .mobile-menu-overlay {
             transition: opacity 0.4s ease-in-out, visibility 0.4s;
         }
+
+        /* --- CREEPY BUTTON CSS --- */
+        .creepy-btn {
+            /* MUDANÇA DE COR AQUI: Vermelho Kortex */
+            --hue: 355deg;
+            --gray1: hsl(var(--hue) 10% 95%);
+            --black: hsl(0 0% 0%);
+            /* Fundo Preto Puro */
+            --primary5: hsl(var(--hue) 100% 50%);
+            /* Vermelho Neon Base */
+            --primary6: hsl(var(--hue) 100% 40%);
+            /* Vermelho Escuro Hover */
+            --trans-dur: 0.3s;
+            background-color: transparent;
+            /* Transparente para misturar com site */
+            border-radius: 1.25em;
+            color: var(--gray1);
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+            /* User requested inherit */
+            letter-spacing: 1px;
+            min-width: 14em;
+            /* Botão mais largo para o texto */
+            padding: 0;
+            border: none;
+            position: relative;
+            z-index: 10;
+            text-decoration: none;
+            /* For <a> tag usage */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .creepy-btn__cover {
+            background-color: var(--primary5);
+            padding: 1em 2em;
+            /* Padding ajustado para ficar robusto */
+            border-radius: 1.25em;
+            position: relative;
+            z-index: 2;
+            transition: transform var(--trans-dur) cubic-bezier(0.65, 0, 0.35, 1), background-color var(--trans-dur);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .creepy-btn__eyes {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            right: 1.5em;
+            /* Original positioning */
+            bottom: 50%;
+            /* Center vertically behind? Or behind the button? User said "atrás do botão" */
+            transform: translateY(50%);
+            /* Center vertically */
+            z-index: 1;
+            pointer-events: none;
+            padding-right: 0.5em;
+            /* Slight offset if needed */
+        }
+
+        /* User provided CSS for eyes was 'bottom: 0.5em'. I will stick to user CSS unless it looks broken.
+           User Logic: "bottom: 0.5em" might place them peaking out.
+           "atrás do botão" implies z-index: 1 (cover is z-index: 2).
+           If I use user's CSS:
+           .creepy-btn__eyes { right: 1.5em; bottom: 0.5em; z-index: 1; }
+           This might put them slightly visible at the bottom right corner?
+           Let's use the USER'S CSS exactly as base, then tweak if needed.
+        */
+        .creepy-btn__eyes {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            right: 1.5em;
+            bottom: 0.5em;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+
+        .creepy-btn__eye {
+            background-color: white;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 1em;
+            height: 1em;
+            position: relative;
+        }
+
+        .creepy-btn__pupil {
+            background-color: black;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Efeito de rotação ao passar o mouse */
+        .creepy-btn:hover .creepy-btn__cover {
+            transform: rotate(-5deg) translate(-2px, -2px);
+            background-color: var(--primary6);
+        }
     </style>
 </head>
 
@@ -253,9 +365,9 @@
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-2 group">
-                <img src="logo.png" alt="Kortex Logo"
-                    class="h-10 w-auto object-contain drop-shadow-neon-sm hover:drop-shadow-neon transition-all duration-300">
-                <span class="text-xl font-bold tracking-tight relative z-10">Kortex<span
+                <img src="assets/logo.png" alt="Kortex Logo"
+                    class="h-14 w-auto object-contain drop-shadow-neon-sm hover:drop-shadow-neon transition-all duration-300">
+                <span class="text-xl font-bold tracking-tight relative z-10">KORTEX<span
                         class="text-kortex-primary">.</span></span>
             </a>
 
@@ -338,14 +450,21 @@
             </h1>
 
             <p class="text-kortex-muted text-lg md:text-xl max-w-xl leading-relaxed">
-                Atenda clientes 24h no WhatsApp e triplique vendas com automação inteligente.
+                Atenda clientes 24h no WhatsApp e <span class="text-kortex-primary drop-shadow-neon font-bold">triplique
+                    vendas</span> com automação inteligente.
             </p>
 
             <div class="mt-4">
-                <a href="mailto:suportekortex@gmail.com" class="kortex-btn-wrapper">
-                    <button class="kortex-btn glitch-hover">
-                        Quero Automatizar
-                    </button>
+                <a href="mailto:suportekortex@gmail.com" class="creepy-btn" id="creepy-btn">
+                    <span class="creepy-btn__cover">QUERO AUTOMATIZAR</span>
+                    <div class="creepy-btn__eyes">
+                        <div class="creepy-btn__eye">
+                            <div class="creepy-btn__pupil"></div>
+                        </div>
+                        <div class="creepy-btn__eye">
+                            <div class="creepy-btn__pupil"></div>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -471,9 +590,9 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
                 <a href="#" class="flex items-center gap-2 group">
-                    <img src="logo.png" alt="Kortex Logo"
-                        class="h-8 w-auto opacity-80 group-hover:opacity-100 transition-opacity">
-                    <span class="text-2xl font-bold">Kortex<span class="text-kortex-primary">.</span></span>
+                    <img src="assets/logo.png" alt="Kortex Logo"
+                        class="h-12 w-auto opacity-80 group-hover:opacity-100 transition-opacity">
+                    <span class="text-2xl font-bold">KORTEX<span class="text-kortex-primary">.</span></span>
                 </a>
                 <p class="text-kortex-muted text-sm">O futuro da sua empresa começa agora.</p>
             </div>
@@ -509,6 +628,54 @@
             once: true,
             offset: 50,
         });
+
+        // --- Creepy Button Logic ---
+        const creepyBtn = document.getElementById('creepy-btn');
+        if (creepyBtn) {
+            const pupils = creepyBtn.querySelectorAll('.creepy-btn__pupil');
+            // Store eyes position (approximate or update on mouse move if relative)
+            // The React code updates eyes position based on getBoundingClientRect() on every move.
+            // We can optimize or do the same.
+
+            const updateEyes = (e) => {
+                const userEvent = e.touches ? e.touches[0] : e;
+                const eyesRect = creepyBtn.getBoundingClientRect(); // Using the button rect as reference for eyes "center"
+                // The logical center for the eyes calculation in user's code:
+                // eyesRect.left + eyesRect.width / 2
+
+                const eyes = {
+                    x: eyesRect.left + eyesRect.width / 2,
+                    y: eyesRect.top + eyesRect.height / 2
+                };
+                const cursor = {
+                    x: userEvent.clientX,
+                    y: userEvent.clientY
+                };
+
+                const dx = cursor.x - eyes.x;
+                const dy = cursor.y - eyes.y;
+                const angle = Math.atan2(-dy, dx) + Math.PI / 2;
+                const visionRangeX = 180;
+                const visionRangeY = 75;
+                const distance = Math.hypot(dx, dy);
+
+                // Limita o movimento
+                const x = Math.sin(angle) * Math.min(distance, 150) / visionRangeX;
+                const y = Math.cos(angle) * Math.min(distance, 150) / visionRangeY;
+
+                // transform: translate(${translateX}, ${translateY})
+                // translateX = -50 + eyeCoords.x * 50
+                const translateX = -50 + x * 50;
+                const translateY = -50 + y * 50;
+
+                pupils.forEach(pupil => {
+                    pupil.style.transform = `translate(${translateX}%, ${translateY}%)`;
+                });
+            };
+
+            creepyBtn.addEventListener('mousemove', updateEyes);
+            creepyBtn.addEventListener('touchmove', updateEyes);
+        }
 
         // Initialize Particles
         particlesJS("particles-js", {
@@ -575,5 +742,4 @@
 </body>
 
 </html>
-
-
+```
