@@ -381,10 +381,10 @@
 
             <!-- CTA Desktop (Small Version) -->
             <div class="hidden md:block">
-                <button
-                    class="px-6 py-2 rounded-full border border-white/10 hover:border-kortex-primary/50 hover:bg-kortex-primary/10 text-xs font-semibold tracking-wider transition-all">
-                    FALE CONOSCO
-                </button>
+                <a href="https://painel.kortexcompany.com.br" target="_blank"
+                    class="px-6 py-2 rounded-full border border-white/10 hover:border-kortex-primary/50 hover:bg-kortex-primary/10 text-xs font-semibold tracking-wider transition-all inline-block">
+                    LOGIN
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -455,7 +455,7 @@
             </p>
 
             <div class="mt-4">
-                <a href="mailto:suportekortex@gmail.com" class="creepy-btn" id="creepy-btn">
+                <a href="https://wa.me/5547992102776" class="creepy-btn" id="creepy-btn">
                     <span class="creepy-btn__cover">QUERO AUTOMATIZAR</span>
                     <div class="creepy-btn__eyes">
                         <div class="creepy-btn__eye">
@@ -601,14 +601,13 @@
                 class="flex flex-col items-center md:items-end gap-2 text-center md:text-right text-sm text-kortex-muted">
                 <a href="mailto:suportekortex@gmail.com"
                     class="hover:text-white transition-colors">suportekortex@gmail.com</a>
-                <p>Londrina, Paraná</p>
+                <p>Balneário Camboriú</p>
                 <div class="flex gap-4 mt-2">
-                    <a href="#" class="hover:text-kortex-primary transition-colors"><i
+                    <a href="https://www.instagram.com/kortexcompanyltda?igsh=MWhraWk0YWw4b2htbA=="
+                        class="hover:text-kortex-primary transition-colors"><i
                             class="ph ph-instagram-logo text-xl"></i></a>
-                    <a href="#" class="hover:text-kortex-primary transition-colors"><i
+                    <a href="https://wa.me/5547992102776" class="hover:text-kortex-primary transition-colors"><i
                             class="ph ph-whatsapp-logo text-xl"></i></a>
-                    <a href="#" class="hover:text-kortex-primary transition-colors"><i
-                            class="ph ph-linkedin-logo text-xl"></i></a>
                 </div>
             </div>
         </div>
@@ -632,6 +631,15 @@
         // --- Creepy Button Logic ---
         const creepyBtn = document.getElementById('creepy-btn');
         if (creepyBtn) {
+            // Click Delay Logic
+            creepyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                setTimeout(() => {
+                    const url = creepyBtn.getAttribute('href');
+                    if (url) window.location.href = url;
+                }, 300);
+            });
+
             const pupils = creepyBtn.querySelectorAll('.creepy-btn__pupil');
             // Store eyes position (approximate or update on mouse move if relative)
             // The React code updates eyes position based on getBoundingClientRect() on every move.
@@ -743,4 +751,3 @@
 
 </html>
 ```
-
