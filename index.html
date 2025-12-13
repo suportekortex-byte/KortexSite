@@ -373,16 +373,39 @@
 
             <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-8">
-                <a href="#results" class="text-sm text-kortex-muted hover:text-white transition-colors">Nossa Visão</a>
-                <a href="#services" class="text-sm text-kortex-muted hover:text-white transition-colors">Soluções de
+                <a href="#results" class="text-sm text-kortex-muted hover:text-white transition-colors"
+                    data-i18n="nav_vision">Nossa Visão</a>
+                <a href="#services" class="text-sm text-kortex-muted hover:text-white transition-colors"
+                    data-i18n="nav_services">Soluções de
                     Escala</a>
-                <a href="#" class="text-sm text-kortex-muted hover:text-white transition-colors">Cases de Sucesso</a>
+                <a href="#" class="text-sm text-kortex-muted hover:text-white transition-colors"
+                    data-i18n="nav_cases">Cases de Sucesso</a>
             </nav>
 
             <!-- CTA Desktop (Small Version) -->
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-4">
+                <!-- Flags -->
+                <div class="flex items-center gap-2">
+                    <button onclick="changeLanguage('pt')" class="hover:scale-110 transition-transform"
+                        aria-label="Português">
+                        <img src="https://flagcdn.com/w40/br.png" alt="Brasil"
+                            class="w-6 h-auto rounded-sm shadow-sm opacity-100 hover:opacity-100 transition-opacity">
+                    </button>
+                    <button onclick="changeLanguage('en')" class="hover:scale-110 transition-transform"
+                        aria-label="English">
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA"
+                            class="w-6 h-auto rounded-sm shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+                    </button>
+                    <button onclick="changeLanguage('es')" class="hover:scale-110 transition-transform"
+                        aria-label="Español">
+                        <img src="https://flagcdn.com/w40/es.png" alt="España"
+                            class="w-6 h-auto rounded-sm shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+                    </button>
+                </div>
+
                 <a href="https://painel.kortexcompany.com.br" target="_blank"
-                    class="px-6 py-2 rounded-full border border-white/10 hover:border-kortex-primary/50 hover:bg-kortex-primary/10 text-xs font-semibold tracking-wider transition-all inline-block">
+                    class="px-6 py-2 rounded-full border border-white/10 hover:border-kortex-primary/50 hover:bg-kortex-primary/10 text-xs font-semibold tracking-wider transition-all inline-block"
+                    data-i18n="cta_login">
                     LOGIN
                 </a>
             </div>
@@ -403,24 +426,27 @@
         class="mobile-menu-overlay fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col justify-center items-center gap-8 opacity-0 invisible">
         <nav class="flex flex-col items-center gap-8 text-center">
             <a href="#about" onclick="toggleMenu()"
-                class="text-2xl font-bold text-white hover:text-kortex-primary transition-colors tracking-tight">
+                class="text-2xl font-bold text-white hover:text-kortex-primary transition-colors tracking-tight"
+                data-i18n="nav_mobile_vision">
                 Nossa Visão
             </a>
             <a href="#services" onclick="toggleMenu()"
-                class="text-2xl font-bold text-white hover:text-kortex-primary transition-colors tracking-tight">
+                class="text-2xl font-bold text-white hover:text-kortex-primary transition-colors tracking-tight"
+                data-i18n="nav_mobile_services">
                 Soluções de Escala
             </a>
             <a href="#portfolio" onclick="toggleMenu()"
-                class="text-2xl font-bold text-white hover:text-kortex-primary transition-colors tracking-tight">
+                class="text-2xl font-bold text-white hover:text-kortex-primary transition-colors tracking-tight"
+                data-i18n="nav_mobile_cases">
                 Cases de Sucesso
             </a>
         </nav>
 
         <div class="mt-8">
-            <a href="mailto:suportekortex@gmail.com" class="kortex-btn-wrapper" onclick="toggleMenu()">
-                <button class="kortex-btn glitch-hover" style="width: 200px;">
-                    Escalar Meu Negócio Agora
-                </button>
+            <a href="https://painel.kortexcompany.com.br" target="_blank"
+                class="px-8 py-3 rounded-full border border-white/10 bg-kortex-primary hover:bg-kortex-primaryHover text-white text-sm font-semibold tracking-wider transition-all inline-block shadow-neon-sm"
+                data-i18n="cta_login" onclick="toggleMenu()">
+                LOGIN
             </a>
         </div>
     </div>
@@ -439,24 +465,26 @@
             <div
                 class="border border-white/10 bg-white/5 px-4 py-1.5 rounded-full inline-flex items-center gap-2 backdrop-blur-sm animate-fade-in-up">
                 <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                <span class="text-xs text-kortex-muted uppercase tracking-wider font-medium font-mono">Disponível para
+                <span class="text-xs text-kortex-muted uppercase tracking-wider font-medium font-mono"
+                    data-i18n="hero_badge">Disponível para
                     novos
                     projetos</span>
             </div>
 
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-                Sua empresa dorme.<br>
+                <span data-i18n="hero_title_1">Sua empresa dorme.</span><br>
                 <span id="typewriter-text" class="text-kortex-primary drop-shadow-neon cursor-blink"></span>
             </h1>
 
             <p class="text-kortex-muted text-lg md:text-xl max-w-xl leading-relaxed">
-                Atenda clientes 24h no WhatsApp e <span class="text-kortex-primary drop-shadow-neon font-bold">triplique
-                    vendas</span> com automação inteligente.
+                <span data-i18n="hero_subtitle_start">Atenda clientes 24h no WhatsApp e</span> <span
+                    class="text-kortex-primary drop-shadow-neon font-bold" data-i18n="hero_subtitle_highlight">triplique
+                    vendas</span> <span data-i18n="hero_subtitle_end">com automação inteligente.</span>
             </p>
 
             <div class="mt-4">
                 <a href="https://wa.me/5547992102776" class="creepy-btn" id="creepy-btn">
-                    <span class="creepy-btn__cover">QUERO AUTOMATIZAR</span>
+                    <span class="creepy-btn__cover" data-i18n="hero_btn">QUERO AUTOMATIZAR</span>
                     <div class="creepy-btn__eyes">
                         <div class="creepy-btn__eye">
                             <div class="creepy-btn__pupil"></div>
@@ -601,7 +629,7 @@
                 class="flex flex-col items-center md:items-end gap-2 text-center md:text-right text-sm text-kortex-muted">
                 <a href="mailto:suportekortex@gmail.com"
                     class="hover:text-white transition-colors">suportekortex@gmail.com</a>
-                <p>Balneário Camboriú, SC</p>
+                <p>Balneário Camboriú</p>
                 <div class="flex gap-4 mt-2">
                     <a href="https://www.instagram.com/kortexcompanyltda?igsh=MWhraWk0YWw4b2htbA=="
                         class="hover:text-kortex-primary transition-colors"><i
@@ -621,12 +649,125 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>
+        // --- Internationalization (I18n) ---
+        const translations = {
+            pt: {
+                nav_vision: "Nossa Visão",
+                nav_services: "Soluções de Escala",
+                nav_cases: "Cases de Sucesso",
+                cta_login: "LOGIN",
+                hero_badge: "Disponível para novos projetos",
+                hero_title_1: "Sua empresa dorme.",
+                hero_subtitle_start: "Atenda clientes 24h no WhatsApp e",
+                hero_subtitle_highlight: "triplique vendas",
+                hero_subtitle_end: "com automação inteligente.",
+                hero_btn: "QUERO AUTOMATIZAR",
+                typewriter_text: "A nossa IA, não.",
+                nav_mobile_vision: "Nossa Visão",
+                nav_mobile_services: "Soluções de Escala",
+                nav_mobile_cases: "Cases de Sucesso"
+            },
+            en: {
+                nav_vision: "Our Vision",
+                nav_services: "Scaling Solutions",
+                nav_cases: "Success Cases",
+                cta_login: "LOGIN",
+                hero_badge: "Available for new projects",
+                hero_title_1: "Your company sleeps.",
+                hero_subtitle_start: "Answer clients 24/7 on WhatsApp and",
+                hero_subtitle_highlight: "triple sales",
+                hero_subtitle_end: "with intelligent automation.",
+                hero_btn: "I WANT TO AUTOMATE",
+                typewriter_text: "Our AI does not.",
+                nav_mobile_vision: "Our Vision",
+                nav_mobile_services: "Scaling Solutions",
+                nav_mobile_cases: "Success Cases"
+            },
+            es: {
+                nav_vision: "Nuestra Visión",
+                nav_services: "Soluciones de Escala",
+                nav_cases: "Casos de Éxito",
+                cta_login: "LOGIN",
+                hero_badge: "Disponible para nuevos proyectos",
+                hero_title_1: "Tu empresa duerme.",
+                hero_subtitle_start: "Atiende clientes 24h en WhatsApp y",
+                hero_subtitle_highlight: "triplica ventas",
+                hero_subtitle_end: "con automatización inteligente.",
+                hero_btn: "QUIERO AUTOMATIZAR",
+                typewriter_text: "Nuestra IA no.",
+                nav_mobile_vision: "Nuestra Visión",
+                nav_mobile_services: "Soluciones de Escala",
+                nav_mobile_cases: "Casos de Éxito"
+            }
+        };
+
+        let currentLang = 'pt';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const elements = document.querySelectorAll('[data-i18n]');
+
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update Typewriter manually if needed, or restart it
+            // For now, simpler handling:
+            const typewriterSpan = document.getElementById('typewriter-text');
+            if (typewriterSpan) {
+                // Clear current text
+                typewriterSpan.innerHTML = "";
+                // Reset text variable for typewriter function
+                // Note: The original typewriter function uses a const 'text'. We need to make it mutable or handle it differently.
+                // We will modify the typewriter logic below to read from a global or updated variable.
+            }
+
+            // Re-trigger typewriter with new text ?? 
+            // The original typewriter function is simple and recursive.
+            // Let's just reload the page for simplicity? No, that's bad UX.
+            // Let's hack the typewriter global var if possible or accept it only updates on refresh?
+            // User requirement: "ao clicar na bandeira o site seja traduzido". 
+            // I should safeguard the typewriter.
+            // For this iteration, I'll update the 'text' variable used by typewriter if I can modify it.
+            // I will change 'const text' to 'let text' in the existing script block below. But I can't reach it easily from here.
+            // I will handle typewriter update in the replace_content of the script block.
+
+            // Update Flag Opacity
+            const flags = {
+                'pt': 'br.png',
+                'en': 'us.png',
+                'es': 'es.png'
+            };
+            // This needs specific logic to target the buttons. simpler: select buttons by onclick attribute value.
+            document.querySelectorAll('button[onclick^="changeLanguage"]').forEach(btn => {
+                const btnLang = btn.getAttribute('onclick').match(/'(\w+)'/)[1];
+                const img = btn.querySelector('img');
+                if (btnLang === lang) {
+                    img.classList.remove('opacity-60');
+                    img.classList.add('opacity-100');
+                } else {
+                    img.classList.add('opacity-60');
+                    img.classList.remove('opacity-100');
+                }
+            });
+        }
+
         // Initialize AOS
         AOS.init({
             duration: 800,
             once: true,
             offset: 50,
         });
+
+
+
 
         // --- Creepy Button Logic ---
         const creepyBtn = document.getElementById('creepy-btn');
@@ -694,7 +835,10 @@
                 "opacity": { "value": 0.3, "random": true },
                 "size": { "value": 3, "random": true },
                 "line_linked": { "enable": true, "distance": 150, "color": "#FF0033", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                "move": {
+                    "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out",
+                    "bounce": false
+                }
             },
             "interactivity": {
                 "detect_on": "canvas",
@@ -710,17 +854,39 @@
             "retina_detect": true
         });
 
+
         // Typewriter Effect
-        const text = "A nossa IA, não.";
+        let typeWriterText = "A nossa IA, não.";
         const element = document.getElementById('typewriter-text');
         let index = 0;
+        let typeWriterTimeout;
 
         function typeWriter() {
-            if (index < text.length) {
-                element.innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 100);
+            // Check if language changed, update text reference
+            if (typeof translations !== 'undefined' && translations[currentLang]) {
+                typeWriterText = translations[currentLang].typewriter_text;
             }
+
+            if (index < typeWriterText.length) {
+                element.innerHTML += typeWriterText.charAt(index);
+                index++;
+                typeWriterTimeout = setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Hook into changeLanguage to reset typewriter
+        if (typeof changeLanguage !== 'undefined') {
+            const originalChangeLanguage = changeLanguage;
+            changeLanguage = function (lang) {
+                originalChangeLanguage(lang);
+                // Reset typewriter
+                clearTimeout(typeWriterTimeout);
+                if (element) {
+                    element.innerHTML = "";
+                    index = 0;
+                    typeWriter();
+                }
+            };
         }
 
         // Start typing after a small delay
@@ -750,5 +916,3 @@
 </body>
 
 </html>
-
-
